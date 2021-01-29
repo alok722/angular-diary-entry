@@ -11,7 +11,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { AddpostComponent } from './pages/addpost/addpost.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 import { SigninComponent } from './pages/signin/signin.component';
-import { SignoutComponent } from './pages/signout/signout.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { SignoutComponent } from './pages/signout/signout.component';
     HomeComponent,
     AddpostComponent,
     PagenotfoundComponent,
-    SigninComponent,
-    SignoutComponent
+    SigninComponent
   ],
   imports: [
     BrowserModule,
