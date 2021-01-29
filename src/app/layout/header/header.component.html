@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" [routerLink]="['/']">
-    <img src="src/assets/dear-diary.png" width="100" height="30" class="d-inline-block align-top" alt="" />
+    <img src="/assets/dear-diary.png" width="50" height="50" class="d-inline-block align-top" alt="" />
     Diary Entry
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -20,7 +20,7 @@
 
       <a *ngIf="email" (click)="handleSignOut()" class="nav-item nav-link text-warning">Log Out 🚫</a>
 
-      <a [routerLink]="['/addpost']" class="nav-item nav-link btn btn-warning text-primary">
+      <a [routerLink]="['/addpost']" class="nav-item nav-link btn btn-warning text-dark">
         Write 📝</a>
     </div>
   </div>
