@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
   <a class="navbar-brand" [routerLink]="['/']">
     <img src="/assets/dear-diary.png" width="50" height="50" class="d-inline-block align-top" alt="" />
     Diary Entry
@@ -13,14 +13,14 @@
       <div *ngIf="email" class="navbar-text float-left">
         {{ email }}
       </div>
-      <a routerLinkActive="active" [routerLink]="['/']" class="nav-item nav-link">Home 🏡</a>
+      <a [routerLink]="['/']" class="nav-item nav-link">Home🏡</a>
       <!-- conditionally rendering links  -->
-      <a *ngIf="!email" [routerLink]="['/signin']" class="nav-item nav-link">Sign In 👀</a>
-      <a *ngIf="!email" [routerLink]="['/signup']" class="nav-item nav-link">Sign Up ➕</a>
+      <a *ngIf="!email" routerLinkActive="active" [routerLink]="['/signin']" class="nav-item nav-link">Sign In👀</a>
+      <a *ngIf="!email" routerLinkActive="active" [routerLink]="['/signup']" class="nav-item nav-link">Sign Up➕</a>
 
-      <a *ngIf="email" (click)="handleSignOut()" class="nav-item nav-link text-warning">Log Out 🚫</a>
+      <a *ngIf="email" routerLinkActive="active" (click)="handleSignOut()" class="nav-item nav-link text-warning">Log Out🚫</a>
 
-      <a [routerLink]="['/addpost']" class="nav-item nav-link btn btn-warning text-dark">
+      <a *ngIf="email" routerLinkActive="active" [routerLink]="['/addpost']" class="nav-item nav-link btn btn-warning text-dark">
         Write 📝</a>
     </div>
   </div>
