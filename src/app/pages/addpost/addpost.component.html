@@ -1,1 +1,57 @@
-<p>addpost works!</p>
+<div class="main row mt-5 mb-3">
+  <div class="col col-6">
+    <div class="card border-primary">
+      <div class="card-header bg-secondary text-large text-white text-center">
+        {{ "Add Your awesome Post" | uppercase }}
+      </div>
+
+      <form class="card-body" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">I am feeling</div>
+            </div>
+            <input type="text" class="form-control" [(ngModel)]="emotion" id="emotion" name="emotion" required placeholder="type your emotion. . .">
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="caption">Caption</label>
+          <textarea type="text" rows="5" class="form-control" id="caption" name="caption" [(ngModel)]="caption" required
+            placeholder="type caption. . ."></textarea>
+        </div>
+
+        <div class="text-center mb-4 mt-2">
+          <label for="imagepicker" class="">
+            Add your awesome photo
+          </label>
+
+          <input type="file" name="image" id="imagepicker" accept="image/*" multiple="{false}"
+            (change)="uploadFile($event)" class="form-control-file" />
+          <div class="text-info text-center" [hidden]="!uploadPercent || uploadPercent == 100">
+            uploading {{ uploadPercent | number: "1.0-0" }} % of 100% <br />
+            Please wait a little...
+          </div>
+          <div class="text-success text-uppercase text-center" *ngIf="uploadPercent == 100">
+            Upload finished
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" [disabled]="!picture">
+            Submit Post
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="picture" class="col col-md-6">
+    <h3 class="text-primary">
+      Post Preview
+    </h3>
+    <img [src]="picture" alt="" class="img-fluid" />
+    <small *ngIf="emotion" class="text-white font-italic">I am feeling {{ emotion }}</small>
+    <p *ngIf="caption" class="text-white">{{ caption }}</p>
+  </div>
+</div>
