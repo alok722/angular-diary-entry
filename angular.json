@@ -117,8 +117,16 @@
               "devServerTarget": "diary-entry:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "diary-entry"
+    }
+  },
+  "defaultProject": "diary-entry",
+  "cli": {
+    "analytics": false
+  }
 }

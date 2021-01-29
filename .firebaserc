@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "diaryentry722": {
+      "hosting": {
+        "diary-entry": [
+          "diaryentry722"
+        ]
+      }
+    }
+  }
+}
