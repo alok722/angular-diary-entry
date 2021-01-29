@@ -1,4 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import {
+  faThumbsUp,
+  faThumbsDown,
+  faShareSquare,
+} from '@fortawesome/free-regular-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-post',
@@ -8,9 +15,53 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PostComponent implements OnInit {
 
   @Input() post;
-  constructor() { }
+  faThumbsUp = faThumbsUp;
+  faThumbsDown = faThumbsDown;
+  faShareSquare = faShareSquare;
+
+  id = null;
+
+  upvote = 0;
+  downvote = 0;
+  constructor(private db: AngularFireDatabase, private auth: AuthService) {
+    this.auth.getUser().subscribe((user) => {
+      this.id = user?.uid;
+    });
+  }
 
   ngOnInit(): void {
+  }
+
+  //TODO: bug in updating the changes
+  ngOnChanges(): void {
+    if (this.post.vote) {
+      Object.values(this.post.vote).map((val: any) => {
+        if (val.upvote) {
+          this.upvote += 1;
+        }
+        if (val.downvote) {
+          this.downvote += 1;
+        }
+      });
+    }
+  }
+
+  upvotePost() {
+    console.log('UPVOTING');
+    this.db.object(`/posts/${this.post.id}/vote/${this.id}`).set({
+      upvote: 1,
+    });
+  }
+
+  downvotePost() {
+    console.log('DOWNVOTING');
+    this.db.object(`/posts/${this.post.id}/vote/${this.id}`).set({
+      downvote: 1,
+    });
+  }
+
+  getInstaUrl() {
+    return `https://instagram.com/${this.post.username}`;
   }
 
 }
