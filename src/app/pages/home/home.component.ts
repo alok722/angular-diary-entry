@@ -27,7 +27,9 @@ export class HomeComponent implements OnInit {
           this.users = Object.values(obj);
           this.isLoading = false;
         } else {
-          this.toastr.error("NO user found");
+          this.toastr.error('😧 No user available !!!', '', {
+            closeButton: true,
+          });
           this.users = [];
           this.isLoading = false;
         }
@@ -42,7 +44,9 @@ export class HomeComponent implements OnInit {
           this.posts = Object.values(obj).sort((a, b) => b.date - a.date);
           this.isLoading = false;
         } else {
-          this.toastr.error("NO post to display");
+          this.toastr.error('😧 No posts to display !!!', '', {
+            closeButton: true,
+          });
           this.posts = [];
           this.isLoading = false;
         }

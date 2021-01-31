@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row mt-5 mb-3">
     <div class="col col-6 offset-3">
-      <div class="card border-primary">
-        <div class="card-header text-center text-info text-uppercase">
-          Sign Up Please
+      <div class="card shadow mb-5 bg-white rounded">
+        <div class="card-header text-center text-white bg-dark" id="brand">
+          Sign Up, <span id="underline">Please</span>
         </div>
 
         <div class="card-body">
@@ -78,7 +78,7 @@
             </div>
 
             <div class="text-center">
-              <button class="btn btn-primary" type="submit" [disabled]="!f.form.valid">
+              <button class="btn btn-sm btn-dark" type="submit" [disabled]="!f.form.valid">
                 Sign Up
               </button>
             </div>

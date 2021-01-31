@@ -53,7 +53,7 @@ export class SignupComponent implements OnInit {
         })
       })
       .then(() => {
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/home');
         this.toastr.info('😃 SignUp success!');
       })
       .catch((err) => {

@@ -61,11 +61,16 @@ export class AddpostComponent implements OnInit {
         date: Date.now(),
       })
       .then(() => {
-        this.toastr.success("Post added successfully");
+        this.toastr.info('😃 Post added successfully!', '', {
+          closeButton: true,
+        });
         this.router.navigateByUrl("/");
       })
       .catch((err) => {
-        this.toastr.error("Oopsss");
+        console.error(err);
+        this.toastr.error('😧 Error while posting !!!', '', {
+          closeButton: true,
+        });
       });
   }
 
@@ -87,7 +92,9 @@ export class AddpostComponent implements OnInit {
       finalize(() => {
         fileRef.getDownloadURL().subscribe((url) => {
           this.picture = url;
-          this.toastr.success("Image upload Success");
+          this.toastr.info('😃 Image upload Success!', '', {
+            closeButton: true,
+          });
         });
       }),
     ).subscribe();

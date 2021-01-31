@@ -3,7 +3,7 @@
     <img [src]="user.picture" class="rounded-circle ml-2" />
   </div>
   <div class="card-body">
-    <h5 class="card-title">{{ user.name | uppercase }}</h5>
+    <a [href]="getInstaUrl()" target="_blank" class="text-primary"><h5 class="card-title">{{ user.name }}</h5></a>
     <p class="card-text">{{ user.bio }}</p>
   </div>
 </div>

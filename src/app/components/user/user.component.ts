@@ -13,4 +13,8 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getInstaUrl() {
+    return `https://instagram.com/${this.user.username}`;
+  }
+
 }

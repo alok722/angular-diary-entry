@@ -30,11 +30,15 @@ export class HeaderComponent implements OnInit {
     try {
       await this.auth.signOut();
       this.router.navigateByUrl('/signin');
-      this.toastr.info('😃 Logout success!');
+      this.toastr.info('😃 Logout success!', '', {
+        closeButton: true,
+      });
       this.email = null;
     } catch (error) {
       console.error(error);
-      this.toastr.error('😧 Error Signing out !!!');
+      this.toastr.error('😧 Error Signing out !!!', '', {
+        closeButton: true,
+      });
     }
   }
 

@@ -32,7 +32,6 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //TODO: bug in updating the changes
   ngOnChanges(): void {
     if (this.post.vote) {
       Object.values(this.post.vote).map((val: any) => {
