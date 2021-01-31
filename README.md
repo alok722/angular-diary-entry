@@ -1,27 +1,46 @@
-# DiaryEntry
+<h1 align="center">welcome to project: dear diary 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Maintenance" src="https://img.shields.io/badge/Maintained-yes-blue.svg" />
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.13.
+> a responsive angular webapp to share daily thoughts by sharing an image along with caption, like, dislike features and has been inspired by Instagram. Backend functionalities has been implemneted using firebase.
 
-## Development server
+## 🏠 [Home](https://diaryentry722.web.app/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 📸 screenshot
+![demo](./src/assets/demo1.JPG)
+![demo](./src/assets/demo-1.JPG)
+![demo](./src/assets/demo-2.JPG)
 
-## Code scaffolding
+## 🛠 usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+$ git clone https://github.com/alok722/angular-diary-entry.git
 
-## Build
+$ cd angular-diary-entry
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+$ npm i
 
-## Running unit tests
+$ npm run start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 👤 author
 
-## Running end-to-end tests
+ **Alok raj (alokr417@gmail.com)**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* website: https://alokraj.tech/
+* github: [@alok722](https://github.com/alok722)
+* linkedin: [@alok722](https://linkedin.com/in/alok722)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## 🤝 contributing
+
+contributions, issues and feature requests are welcome!
+
+## 🙌 show your support
+
+give a ⭐️ if this project helped you!
+
+
+***
